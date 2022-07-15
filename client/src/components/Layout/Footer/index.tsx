@@ -1,8 +1,8 @@
 import React from 'react';
-import { FooterWarapper } from './style';
+import { FooterWrapper } from './style';
 
 const Footer = () => {
-  return <FooterWarapper></FooterWarapper>;
+  return <FooterWrapper></FooterWrapper>;
 };
 
 export default Footer;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import color from '../../styles/Colors';
 
-const LayoutWarapper = styled.div``;
+const LayoutWrapper = styled.div``;
 
 const Content = styled.div`
   display: flex;
@@ -12,4 +12,4 @@ const Content = styled.div`
   min-height: calc(100vh - 170px);
 `;
 
-export { LayoutWarapper, Content };
+export { LayoutWrapper, Content };

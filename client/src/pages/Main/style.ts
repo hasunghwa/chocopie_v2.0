@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import color from '../../styles/Colors';
 
-const MainWarapper = styled.div``;
+const MainWrapper = styled.div``;
 
-export { MainWarapper };
+export { MainWrapper };
