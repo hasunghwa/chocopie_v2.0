@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../../../styles/Colors';
+import color from '../../../styles/Colors';
 
 const CategoryWrapper = styled.div<{ imgUrl: string; content: string }>`
   display: flex;
