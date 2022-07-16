@@ -10,9 +10,9 @@ interface CategoryProps {
 
 const Category = ({ imgPath, linkTo, categoryName }: CategoryProps) => {
   return (
-    <CategoryWrapper imgUrl={imgPath} content={categoryName}>
-      <Link to={linkTo} />
-    </CategoryWrapper>
+    <Link to={linkTo}>
+      <CategoryWrapper imgUrl={imgPath} content={categoryName} />
+    </Link>
   );
 };
 export default Category;

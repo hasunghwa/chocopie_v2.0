@@ -12,32 +12,32 @@ const CategoryBox = () => {
   const Categorys: CategoryProps[] = [
     {
       imgPath: './img/category-img1.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/agricultural',
       categoryName: '농산물',
     },
     {
       imgPath: './img/category-img2.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/seafood',
       categoryName: '수산물',
     },
     {
       imgPath: './img/category-img3.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/meat',
       categoryName: '축산물',
     },
     {
       imgPath: './img/category-img4.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/sidedish',
       categoryName: '반찬',
     },
     {
       imgPath: './img/category-img5.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/clothing',
       categoryName: '의류',
     },
     {
       imgPath: './img/category-img6.jpg',
-      linkTo: '/',
+      linkTo: '/storelist/health',
       categoryName: '건강식품',
     },
   ];
