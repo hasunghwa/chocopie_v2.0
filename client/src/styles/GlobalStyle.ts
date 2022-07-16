@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
-    }
+  },
+  a {
+    text-decoration: none;
   }
 `;
 
