@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LayoutWarapper = styled.div`
+const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,4 +12,4 @@ const Content = styled.div`
   margin-top: 25px;
 `;
 
-export { LayoutWarapper, Content };
+export { LayoutWrapper, Content };
