@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Main from '@pages/Main';
 import GlobalStyle from '@styles/GlobalStyle';
+import StoreList from '@pages/StoreList';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/storelist/:category" element={<StoreList />} />
       </Routes>
     </div>
   );
