@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import CategoryBox from '../../components/Layout/CategoryBox';
+import Layout from '@components/Layout';
+import CategoryBox from '@components/CategoryBox';
 
 function Main() {
   return (
