@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Layout from '@components/Layout';
 import Stores from '@components/Stores';
+import { StoreListWrapper } from './style';
 
 enum Category {
   agricultural = '농산물',
@@ -20,8 +21,10 @@ function StoreList() {
 
   return (
     <Layout>
-      <div>{Category[selectCategory]}</div>
-      <Stores />
+      <StoreListWrapper>
+        {Category[selectCategory]}
+        <Stores />
+      </StoreListWrapper>
     </Layout>
   );
 }
