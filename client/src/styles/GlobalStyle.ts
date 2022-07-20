@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     min-width: 1100px;
     height: 100vh;
-    background-color: ${Colors.White};
+    background-color: ${Colors.LightGray};
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
@@ -20,6 +20,20 @@ const GlobalStyle = createGlobalStyle`
   },
   a {
     text-decoration: none;
+  }
+  button {    
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  input {
+    outline: none;
+    border: none;
   }
 `;
 
