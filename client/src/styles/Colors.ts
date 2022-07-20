@@ -1,9 +1,9 @@
 enum Colors {
-  Blue = '#0055FB',
-  LightRed = '#EE6762',
-  Red = '#FB0000',
+  Blue = '#00ADB5',
+  LightRed = '#FFC4C4',
+  Red = '#A10035',
   White = '#FFFFFF',
-  LightGray = '#aaaaaa',
+  LightGray = '#EEEEEE',
   DarkGray = '#787878',
 }
 
