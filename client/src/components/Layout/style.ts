@@ -7,9 +7,10 @@ const LayoutWrapper = styled.div`
 `;
 
 const Content = styled.div`
-  min-height: calc(100vh - 195px);
-  width: 70%;
+  min-height: calc(100vh - 100px);
+  width: 1024px;
   margin-top: 25px;
+  padding-top: 70px;
 `;
 
 export { LayoutWrapper, Content };
