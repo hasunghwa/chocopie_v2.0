@@ -6,14 +6,15 @@ import { Content, LayoutWrapper } from './style';
 
 interface Props {
   children: JSX.Element[] | JSX.Element;
+  isFooter?: boolean;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, isFooter = true }: Props) => {
   return (
     <LayoutWrapper>
       <Header />
       <Content>{children}</Content>
-      <Footer />
+      {isFooter ? <Footer /> : null}
     </LayoutWrapper>
   );
 };

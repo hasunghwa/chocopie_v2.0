@@ -20,7 +20,7 @@ function StoreList() {
   const selectCategory = useParams().category as CategoryStrings;
 
   return (
-    <Layout>
+    <Layout isFooter={false}>
       <StoreListWrapper>
         {Category[selectCategory]}
         <Stores />
