@@ -20,11 +20,15 @@ const GlobalStyle = createGlobalStyle`
   },
   a {
     text-decoration: none;
+    color: ${Colors.Black};
   }
   button {    
     font-size: 14px;
     font-weight: 600;
     border: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
   h3 {
     font-size: 18px;
