@@ -1,6 +1,7 @@
 import React from 'react';
 import { StoresWrapper } from './style';
 import StoreCard from './StoreCard';
+import CategoryMenu from './CategoryMenu';
 
 interface StoreProps {
   id: number;
@@ -66,20 +67,23 @@ const Stores = () => {
     },
   ];
   return (
-    <StoresWrapper>
-      {StoreList.map(item => (
-        <StoreCard
-          key={item.id}
-          id={item.id}
-          mainImg={item.mainImg}
-          introduce={item.introduce}
-          name={item.name}
-          owner={item.owner}
-          address={item.address}
-          phone={item.phone}
-        ></StoreCard>
-      ))}
-    </StoresWrapper>
+    <>
+      <CategoryMenu />
+      <StoresWrapper>
+        {StoreList.map(item => (
+          <StoreCard
+            key={item.id}
+            id={item.id}
+            mainImg={item.mainImg}
+            introduce={item.introduce}
+            name={item.name}
+            owner={item.owner}
+            address={item.address}
+            phone={item.phone}
+          ></StoreCard>
+        ))}
+      </StoresWrapper>
+    </>
   );
 };
 
