@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 import color from '@styles/Colors';
-import logo from '/logo.svg';
+import logo from '/img/logo.png';
 
 const HeaderWarapper = styled.header`
   z-index: 100;
   position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 70px;
   background-color: ${color.White};
   box-shadow: 0 1.4px 1.3px 0 rgba(62, 73, 89, 0.07);
@@ -18,7 +16,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 1024px;
   height: 100%;
   margin: 0 auto;
 `;
