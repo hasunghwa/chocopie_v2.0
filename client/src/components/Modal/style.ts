@@ -7,18 +7,14 @@ interface IHideAnimation {
 
 const Wrapper = styled.div<IHideAnimation>`
   background-color: ${Colors.White};
-  padding: 20px;
-  border-radius: 16px;
+  padding: 0 20px;
   position: relative;
-  max-width: 400px;
+  max-width: 600px;
   z-index: 999;
   min-width: 300px;
   animation: ${props => (props.isHidden ? 'zoomOut' : 'zoomIn')} 0.3s forwards;
   &:hover {
     cursor: default;
-  }
-  & div {
-    text-align: center;
   }
   @keyframes zoomIn {
     0% {
@@ -44,19 +40,35 @@ const Wrapper = styled.div<IHideAnimation>`
   }
 `;
 
-const BottomLeftButton = styled.button`
-  border: none;
-  background-color: white;
+const TopRightButton = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  background-color: transparent;
   &:hover {
     cursor: pointer;
   }
 `;
 
+const Top = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 59px;
+`;
+
+const BottomRightButton = styled.button`
+  padding: 8px 16px;
+  border-radius: 1px;
+  color: white;
+  background-color: ${props => props.color || Colors.DarkGray};
+`;
+
 const Bottom = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 16px;
+  justify-content: flex-end;
+  margin: 16px 0;
 `;
 
 const Background = styled.div<IHideAnimation>`
@@ -94,4 +106,18 @@ const Background = styled.div<IHideAnimation>`
   }
 `;
 
-export { Background, Wrapper, BottomLeftButton, Bottom };
+const Title = styled.h1`
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+`;
+
+export {
+  Background,
+  Wrapper,
+  TopRightButton,
+  Top,
+  Title,
+  BottomRightButton,
+  Bottom,
+};
