@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 
-import { Bottom, Background, Wrapper, BottomLeftButton } from './style';
-interface ModalData {
-  middleContent: ReactElement<any, any>;
-}
-
-interface ModalController {
-  hide: () => void;
-  show?: () => void;
-}
+import { CancelIcon } from '@components/common/Icons';
+import {
+  Top,
+  Background,
+  Wrapper,
+  TopRightButton,
+  Title,
+  BottomRightButton,
+  Bottom,
+} from './style';
 
 function Modal({
-  props: { middleContent },
+  props: { middleContent, title, bottomRightButton },
   controller: { hide },
 }: {
   props: ModalData;
@@ -29,11 +30,22 @@ function Modal({
   return (
     <Background onClick={hideModal} isHidden={hidden}>
       <Wrapper onClick={e => e.stopPropagation()} isHidden={hidden}>
+        <Top>{title && <Title>{title}</Title>}</Top>
+        <TopRightButton onClick={hideModal}>
+          <CancelIcon />
+        </TopRightButton>
         <div>{middleContent}</div>
+        {bottomRightButton && (
+          <Bottom>
+            <BottomRightButton
+              color={bottomRightButton.color}
+              onClick={bottomRightButton.onClickHandler}
+            >
+              {bottomRightButton.text}
+            </BottomRightButton>
+          </Bottom>
+        )}
       </Wrapper>
-      <Bottom>
-        <BottomLeftButton onClick={hideModal}>닫기</BottomLeftButton>
-      </Bottom>
     </Background>
   );
 }
