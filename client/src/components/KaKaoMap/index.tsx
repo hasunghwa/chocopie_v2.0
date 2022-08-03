@@ -3,7 +3,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 import { CustomMapMarker, MarkContent, PostCodeBtn } from './style';
 import { AddressToLatlng } from '@utils/addressUtil';
-import PostCode from './PostCode';
+import PostCode from '@utils/postCode';
 
 const KaKaoMap = () => {
   const [center, setCenter] = useState<Coordinate>({
