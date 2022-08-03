@@ -17,4 +17,4 @@ const PostCodeBtn = styled.button`
   bottom: 16px;
 `;
 
-export { CustomMapMarker, MarkContent, CustomPostCode };
+export { CustomMapMarker, MarkContent, PostCodeBtn };
