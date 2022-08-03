@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 
 import { Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
-import { CustomMapMarker, MarkContent } from './style';
+import { CustomMapMarker, MarkContent, PostCodeBtn } from './style';
 import { AddressToLatlng } from '@utils/addressUtil';
 import PostCode from './PostCode';
 
@@ -46,9 +46,11 @@ const KaKaoMap = () => {
     setCenter(newCenter);
   };
 
+  const openPostCode = PostCode({ handleComplete: handleComplete });
+
   return (
     <>
-      <PostCode text="주소지로 찾기" handleComplete={handleComplete} />
+      <PostCodeBtn onClick={openPostCode}>주소지로 찾기</PostCodeBtn>
 
       <Map
         center={{ lat: center.lat, lng: center.lng }}

@@ -9,4 +9,12 @@ const MarkContent = styled.div`
   background-color: ${Colors.White};
 `;
 
-export { CustomMapMarker, MarkContent };
+const PostCodeBtn = styled.button`
+  padding: 8px 16px;
+  background-color: ${Colors.LightRed};
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+`;
+
+export { CustomMapMarker, MarkContent, CustomPostCode };
