@@ -5,7 +5,11 @@ const StoreWrapper = styled.div`
   display: flex;
   width: 100%;
   border-top: 1px solid ${color.LightGray};
-  padding: 20px 0px;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  background-color: ${color.White};
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 `;
 
 const StoreImg = styled.img`
