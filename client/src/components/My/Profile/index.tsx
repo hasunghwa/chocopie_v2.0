@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ChangeNameForm from './ChangeName/Name';
-import ChangeBirthdayForm from './ChangeName/Birthday';
-import ChangeGenderForm from './ChangeName/Gender';
-import ChangePhoneForm from './ChangeName/Phone';
-import ChangeAddressForm from './ChangeName/Address';
-import ChangePswordForm from './ChangeName/Psword';
+import ChangeNameForm from './ChangeProfile/Name';
+import ChangeBirthdayForm from './ChangeProfile/Birthday';
+import ChangeGenderForm from './ChangeProfile/Gender';
+import ChangePhoneForm from './ChangeProfile/Phone';
+import ChangeAddressForm from './ChangeProfile/Address';
+import ChangePswordForm from './ChangeProfile/Psword';
 import { ProfileWrapper } from './style';
 
 const Profile = () => {
