@@ -8,12 +8,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@dev
-      - run: cd client
+      - uses: actions/checkout@master
       - run: npm ci # clean-install
       - run: npm run build
       - name: deploy to s3 bucket
-        uses: jakejarvis/s3-sync-action@dev
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --delete
         env:
