@@ -7,9 +7,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./client
     steps:
       - uses: actions/checkout@master
-      - run: cd client
       - run: yarn install --immutable --immutable-cache --check-cache
       - run: npm run build
       - name: deploy to s3 bucket
