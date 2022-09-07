@@ -2,7 +2,7 @@
 
 정통시장 프로젝트를 TypeScripte, React를 통해 마이그레이션한 프로젝트 입니다.
 
-### 📌 &nbsp;[정통시장 v2](https://6306fcabb3621637f3d0705d--darling-tiramisu-602cd8.netlify.app/)
+### 📌 &nbsp;[정통시장 v2](http://chocopie-v2.0.s3-website.ap-northeast-2.amazonaws.com/)
 
 ## ✨ Implement
 
