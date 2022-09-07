@@ -11,8 +11,14 @@ jobs:
       working-directory: ./client
     steps:
       - uses: actions/checkout@master
-      - run: yarn install --immutable --immutable-cache --check-cache
-      - run: npm run build
+      - name: Install dependencies
+        working-directory: ${{ env.working-directory }}
+        run: yarn install --immutable --immutable-cache --check-cache
+
+      - name: Run build
+        working-directory: ${{ env.working-directory }}
+        run: npm run build
+
       - name: deploy to s3 bucket
         uses: jakejarvis/s3-sync-action@master
         with:
