@@ -3,8 +3,11 @@ import React from 'react';
 import ChangeForm from '..';
 import PostCode from '@utils/postCode';
 import { getFullAddress } from '@utils/addressUtil';
+interface Props {
+  initialValues: string;
+}
 
-const ChangeAddressForm = ({ initialValues }) => {
+const ChangeAddressForm = ({ initialValues }: Props) => {
   const handleComplete = async (data: PostCodeReturnData) => {
     const newAddress = getFullAddress(data);
     console.log(newAddress);
@@ -14,7 +17,9 @@ const ChangeAddressForm = ({ initialValues }) => {
 
   const middleContent = <button onClick={openPostCode}>{initialValues}</button>;
 
-  const writePost = () => {};
+  const writePost = () => {
+    return;
+  };
 
   return (
     <ChangeForm

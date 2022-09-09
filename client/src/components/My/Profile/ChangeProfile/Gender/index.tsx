@@ -7,8 +7,11 @@ const genders = [
   { value: '남성', label: '남성' },
   { value: '여성', label: '여성' },
 ];
+interface Props {
+  initialValues: string;
+}
 
-const ChangeGenderForm = ({ initialValues }) => {
+const ChangeGenderForm = ({ initialValues }: Props) => {
   const [gender, setGender] = useState(initialValues);
 
   const middleContent = (
@@ -17,7 +20,9 @@ const ChangeGenderForm = ({ initialValues }) => {
         label: gender,
         value: gender,
       }}
-      onChange={e => setGender(e.value)}
+      onChange={newValue => {
+        setGender(newValue as string);
+      }}
       options={genders}
     />
   );

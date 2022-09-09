@@ -29,7 +29,11 @@ const days = [
   { value: '29', label: '29' },
 ];
 
-const ChangeBirthdayForm = ({ initialValues }) => {
+interface Props {
+  initialValues: string;
+}
+
+const ChangeBirthdayForm = ({ initialValues }: Props) => {
   const splitDate = () => {
     let newday = initialValues;
     const date: string[] = [];
@@ -46,7 +50,13 @@ const ChangeBirthdayForm = ({ initialValues }) => {
   };
 
   const date = splitDate();
-  const [selectedOption, setSelectedOption] = useState({
+  interface Date {
+    year: string;
+    month: string;
+    day: string;
+  }
+
+  const [selectedOption, setSelectedOption] = useState<Date>({
     year: date[0],
     month: date[1],
     day: date[2],
@@ -59,7 +69,9 @@ const ChangeBirthdayForm = ({ initialValues }) => {
           label: selectedOption.year,
           value: selectedOption.year,
         }}
-        onChange={e => setSelectedOption({ ...selectedOption, year: e.value })}
+        onChange={newValue => {
+          setSelectedOption({ ...selectedOption, year: newValue as string });
+        }}
         options={years}
       />
       <SelectMonth
@@ -67,7 +79,9 @@ const ChangeBirthdayForm = ({ initialValues }) => {
           label: selectedOption.month,
           value: selectedOption.month,
         }}
-        onChange={e => setSelectedOption({ ...selectedOption, month: e.value })}
+        onChange={newValue => {
+          setSelectedOption({ ...selectedOption, month: newValue as string });
+        }}
         options={months}
       />
       <SelectDay
@@ -75,7 +89,9 @@ const ChangeBirthdayForm = ({ initialValues }) => {
           label: selectedOption.day,
           value: selectedOption.day,
         }}
-        onChange={e => setSelectedOption({ ...selectedOption, day: e.value })}
+        onChange={newValue => {
+          setSelectedOption({ ...selectedOption, day: newValue as string });
+        }}
         options={days}
       />
     </SelectWrapper>

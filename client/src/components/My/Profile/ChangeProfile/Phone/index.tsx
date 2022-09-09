@@ -3,7 +3,11 @@ import React from 'react';
 import { useInput } from '@hooks/UseInput';
 import ChangeForm from '..';
 
-const ChangePhoneForm = ({ initialValues }) => {
+interface Props {
+  initialValues: string;
+}
+
+const ChangePhoneForm = ({ initialValues }: Props) => {
   const [value, onChangeInputValue, isValid] = useInput({
     type: 'string',
     autoFix: false,
