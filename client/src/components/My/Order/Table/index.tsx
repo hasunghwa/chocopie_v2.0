@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { useTable } from 'react-table';
 import { StoreImg, Table, Td, Th, StoreInfo } from './style';
 
-interface Props {
+interface CellProps {
+  storeId: number;
   storeName: string;
   storeImg: string;
 }
@@ -82,10 +83,12 @@ const OrderTable = () => {
       {
         Header: '가게',
         accessor: 'col1', // accessor is the "key" in the data
-        Cell: ({ cell: { value } }) => (
+        Cell: ({ cell }: { cell: CellProps }) => (
           <StoreInfo>
-            <StoreImg src={value.storeImg} />
-            <Link to={`/storeinfo/${value.storeId}`} ><h4>{value.storeName}</h4></Link>
+            <StoreImg src={cell.storeImg} />
+            <Link to={`/storeinfo/${cell.storeId}`}>
+              <h4>{cell.storeName}</h4>
+            </Link>
           </StoreInfo>
         ),
       },
