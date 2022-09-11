@@ -68,7 +68,9 @@ const KaKaoMap = () => {
             <CustomOverlayMap
               position={{ lat: mark.latlng[0], lng: mark.latlng[1] }}
             >
-              <MarkContent ref={el => (markerRef.current[index] = el)}>
+              <MarkContent
+                ref={el => (markerRef.current[index] = el as HTMLDivElement)}
+              >
                 {mark.content}
               </MarkContent>
             </CustomOverlayMap>

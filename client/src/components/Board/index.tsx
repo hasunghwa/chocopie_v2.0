@@ -20,7 +20,7 @@ interface BoardProps {
   //item : object
   //thumbnail : image
   //views : number
-  postDate: Date | string;
+  postDate: string;
   //date_updated : models.DateTimeField(blank:True, null:True)
   //is_noticed : models.BooleanField(blank=True, null=True)
 }
@@ -42,7 +42,7 @@ const Board = () => {
         <PostAuthorImg src={BoardItem.authorImg} />
         <WriterInfo>
           <h4>{BoardItem.title}</h4>
-          <time>{BoardItem.postDate}</time>
+          <p>{BoardItem.postDate}</p>
         </WriterInfo>
       </PostAuthor>
       <PostMain>{BoardItem.content}</PostMain>
