@@ -12,4 +12,10 @@ const SearchForm = styled.form`
   }
 `;
 
-export { SearchForm };
+const CenterContent = styled.div`
+  width: 540px;
+  z-index: 50;
+  margin-left: 210px;
+`;
+
+export { SearchForm, CenterContent };
