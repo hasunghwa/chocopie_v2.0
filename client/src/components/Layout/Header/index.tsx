@@ -13,7 +13,9 @@ const Header = () => {
         <Nav>
           <li>로그인</li>
           <li>장바구니</li>
-          <li>마이페이지</li>
+          <li>
+            <Link to="/my/profile">마이페이지</Link>
+          </li>
         </Nav>
       </Container>
     </HeaderWarapper>
