@@ -83,11 +83,11 @@ const OrderTable = () => {
       {
         Header: '가게',
         accessor: 'col1', // accessor is the "key" in the data
-        Cell: ({ cell }: { cell: CellProps }) => (
+        Cell: (props: { value: CellProps }) => (
           <StoreInfo>
-            <StoreImg src={cell.storeImg} />
-            <Link to={`/storeinfo/${cell.storeId}`}>
-              <h4>{cell.storeName}</h4>
+            <StoreImg src={props.value.storeImg} />
+            <Link to={`/storeinfo/${props.value.storeId}`}>
+              <h4>{props.value.storeName}</h4>
             </Link>
           </StoreInfo>
         ),
