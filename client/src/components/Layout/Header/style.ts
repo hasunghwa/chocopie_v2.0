@@ -12,9 +12,9 @@ const HeaderWarapper = styled.header`
   box-shadow: 0 1.4px 1.3px 0 rgba(62, 73, 89, 0.07);
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ auth: boolean }>`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => (props.auth ? 'space-between' : 'center')};
   align-items: center;
   width: 1024px;
   height: 100%;
