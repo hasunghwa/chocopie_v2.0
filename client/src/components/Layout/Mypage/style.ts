@@ -11,7 +11,6 @@ const StoreInfoWrapper = styled.div`
 const StoreInfoContent = styled.div`
   z-index: 50;
   width: 720px;
-  //margin: 0px 230px;
   background-color: ${Colors.White};
 `;
 
