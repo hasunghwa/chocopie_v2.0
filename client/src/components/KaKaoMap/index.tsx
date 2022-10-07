@@ -1,38 +1,35 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useRef,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
 import { Map, CustomOverlayMap } from 'react-kakao-maps-sdk';
 import { CustomMapMarker, MarkContent, PostCodeBtn } from './style';
 import { AddressToLatlng } from '@utils/addressUtil';
 import PostCode from '@utils/postCode';
+import MARKET from '@lib/db/market.json';
 
-const KaKaoMap = () => {
+interface KaKaoMapProps {
+  setSelectMarket: Dispatch<SetStateAction<MarkerProps | null>>;
+}
+
+const KaKaoMap = ({ setSelectMarket }: KaKaoMapProps) => {
   const [center, setCenter] = useState<Coordinate>({
-    lat: 33.450701,
-    lng: 126.570667,
+    lat: 34.76425614,
+    lng: 127.6641226,
   });
+
   const markerRef = useRef<HTMLDivElement[]>([]);
 
-  const positions = [
-    {
-      content: '카카오',
-      latlng: [33.450705, 126.570677],
-    },
-    {
-      content: '생태연못',
-      latlng: [33.450936, 126.569477],
-    },
-    {
-      content: '텃밭',
-      latlng: [33.450879, 126.56994],
-    },
-    {
-      content: '근린공원',
-      latlng: [33.451393, 126.570738],
-    },
-  ];
+  const positions = MARKET.records.map((el, index) => {
+    return { id: index, content: el.시장명, latlng: [el.위도, el.경도] };
+  });
 
-  const selectMark = useCallback((latlng: number[]) => {
-    console.log(latlng);
+  const selectMark = useCallback((mark: MarkerProps) => {
+    setSelectMarket(mark);
   }, []);
 
   const markOver = useCallback((index: number, isShow: boolean) => {
@@ -51,30 +48,28 @@ const KaKaoMap = () => {
   return (
     <>
       <PostCodeBtn onClick={openPostCode}>주소지로 찾기</PostCodeBtn>
-
       <Map
         center={{ lat: center.lat, lng: center.lng }}
         style={{ width: '100%', height: '400px' }}
       >
-        {positions.map((mark, index) => (
-          <>
+        {positions.map((mark: MarkerProps) => (
+          <React.Fragment key={mark.id}>
             <CustomMapMarker
-              key={index}
-              position={{ lat: mark.latlng[0], lng: mark.latlng[1] }}
-              onClick={() => selectMark(mark.latlng)}
-              onMouseOver={() => markOver(index, true)}
-              onMouseOut={() => markOver(index, false)}
+              position={{ lat: +mark.latlng[0], lng: +mark.latlng[1] }}
+              onClick={() => selectMark(mark)}
+              onMouseOver={() => markOver(mark.id, true)}
+              onMouseOut={() => markOver(mark.id, false)}
             />
             <CustomOverlayMap
-              position={{ lat: mark.latlng[0], lng: mark.latlng[1] }}
+              position={{ lat: +mark.latlng[0], lng: +mark.latlng[1] }}
             >
               <MarkContent
-                ref={el => (markerRef.current[index] = el as HTMLDivElement)}
+                ref={el => (markerRef.current[mark.id] = el as HTMLDivElement)}
               >
                 {mark.content}
               </MarkContent>
             </CustomOverlayMap>
-          </>
+          </React.Fragment>
         ))}
       </Map>
     </>
