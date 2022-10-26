@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Colors from '@styles/Colors';
 
@@ -7,14 +7,19 @@ import { MapWrapper } from './style';
 import KaKaoMap from '@components/KaKaoMap';
 
 function MapModal({ controller }: { controller: ModalController }) {
+  const [selectMarket, setSelectMarket] = useState<MarkerProps | null>(null);
   const middleContent = (
     <MapWrapper>
-      <KaKaoMap></KaKaoMap>
+      <KaKaoMap setSelectMarket={setSelectMarket} />
     </MapWrapper>
   );
 
   const selectLocation = () => {
-    console.log('선택');
+    if (!selectMarket) {
+      alert('시장을 선택해 주세요.');
+      return;
+    }
+    controller.hide();
   };
 
   return (
@@ -23,7 +28,9 @@ function MapModal({ controller }: { controller: ModalController }) {
         middleContent: middleContent,
         title: '시장선택',
         bottomRightButton: {
-          text: '선택',
+          text: selectMarket
+            ? `${selectMarket.content} 가기`
+            : '시장을 선택해주세요',
           color: Colors.Blue,
           onClickHandler: () => {
             selectLocation();
