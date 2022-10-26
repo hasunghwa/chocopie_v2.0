@@ -13,3 +13,9 @@ interface PostCodeReturnData {
   bname: string;
   buildingName: string;
 }
+
+interface MarkerProps {
+  id: number;
+  content: string;
+  latlng: string[];
+}
